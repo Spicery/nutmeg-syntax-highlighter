@@ -1,0 +1,25 @@
+{
+    "name": "nutmeg-syntax-highlighter",
+    "displayName": "Nutmeg Syntax Highlighter",
+    "description": "Syntax highlighter for the Nutmeg programming language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "nutmeg",
+            "aliases": ["Nutmeg", "nutmeg"],
+            "extensions": [".nutmeg"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nutmeg",
+            "scopeName": "source.nutmeg",
+            "path": "./syntaxes/nutmeg.tmLanguage.json"
+        }]
+    }
+}

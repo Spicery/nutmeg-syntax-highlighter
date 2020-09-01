@@ -1,0 +1,72 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Nutmeg",
+	"firstLineMatch": "^#![^ ]*\\bnutmeg\\b.*$",
+	"patterns": [
+		{ "include": "#statements" },
+		{ "include": "#comments" }
+	],
+	"repository": {
+		"statements": {
+			"patterns": [
+				{ "include": "#dqstring" },
+				{ "include": "#sqstring" }
+			]
+		},
+		"expression": {
+			"patterns":[
+				{ "include": "#generic-tag" },
+				{ "include": "#array" },
+				{ "include": "#object" },
+				{ "include": "#keyword" },
+				{ "include": "#dqstring" },
+				{ "include": "#sqstring" },
+				{ "include": "#number" },
+				{ "include": "#eolcomment" },
+				{ "include": "#longcomment" },
+				{ "include": "#xmlcomment" },
+				{ "include": "#xmldiscard" },
+				{ "name": "invalid.illegal.non-starting-characters.jinxml", "match": "[^+:=,;\\s\\w\\/\\'\"\\{\\[\\<]+" },
+				{ "name": "invalid.illegal.identifiers.jinxml", "match": "(?!true|false|null)[\\w]+\\b(?=\\s*[^:+=])" },
+				{ "name": "invalid.illegal.punctuation.jinxml", "match": "[;,]\\s*[;,]+" }
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.nutmeg",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"dqstring": {
+			"name": "string.quoted.double.nutmeg",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [ { "include": "#escape" } ]
+		},
+		"sqstring": {
+			"name": "string.quoted.single.nutmeg",
+			"begin": "'",
+			"end": "'",
+			"patterns": [ { "include": "#escape" } ]
+		},
+		"escape": {
+			"name": "constant.character.escape.nutmeg",
+			"patterns": [
+				{ 
+					"name": "constant.character.escape.nutmeg",
+					"match": "\\\\(?:[bfnrt]|u\\h{4})"
+				},
+				{ 
+					"name": "invalid.illegal.character.escape.nutmeg", 
+					"match": "\\\\[^ubfnrt]" 
+				}
+			]
+		},
+		"eolcomment": {
+			"name": "comment.line.triplehash.nutmeg",
+			"match": "###.*$",
+			"patterns":[]
+		}
+	},
+	"scopeName": "source.nutmeg"
+}
