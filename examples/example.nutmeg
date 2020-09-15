@@ -1,0 +1,9 @@
+def hello():
+    "hello, world"
+end
+
+def hello():
+    let i = 1
+    let s = "asdfas\n"
+    print s + i
+end

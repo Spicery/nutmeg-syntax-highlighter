@@ -1,40 +1,32 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Nutmeg",
+	"scopeName": "source.nutmeg",
 	"firstLineMatch": "^#![^ ]*\\bnutmeg\\b.*$",
+	"foldingStartMarker": "begin",
+	"foldingStopMarker": "end",
+
 	"patterns": [
 		{ "include": "#statements" },
-		{ "include": "#comments" }
+		{ "include": "#eolcomment" }
 	],
 	"repository": {
 		"statements": {
 			"patterns": [
 				{ "include": "#dqstring" },
-				{ "include": "#sqstring" }
-			]
-		},
-		"expression": {
-			"patterns":[
+				{ "include": "#sqstring" },
 				{ "include": "#generic-tag" },
 				{ "include": "#array" },
-				{ "include": "#object" },
-				{ "include": "#keyword" },
 				{ "include": "#dqstring" },
 				{ "include": "#sqstring" },
 				{ "include": "#number" },
-				{ "include": "#eolcomment" },
-				{ "include": "#longcomment" },
-				{ "include": "#xmlcomment" },
-				{ "include": "#xmldiscard" },
-				{ "name": "invalid.illegal.non-starting-characters.jinxml", "match": "[^+:=,;\\s\\w\\/\\'\"\\{\\[\\<]+" },
-				{ "name": "invalid.illegal.identifiers.jinxml", "match": "(?!true|false|null)[\\w]+\\b(?=\\s*[^:+=])" },
-				{ "name": "invalid.illegal.punctuation.jinxml", "match": "[;,]\\s*[;,]+" }
+				{ "include": "#eolcomment" }
 			]
 		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nutmeg",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|begin|end|let|var)\\b"
 			}]
 		},
 		"dqstring": {
@@ -64,9 +56,11 @@
 		},
 		"eolcomment": {
 			"name": "comment.line.triplehash.nutmeg",
-			"match": "###.*$",
-			"patterns":[]
+			"match": "###.*$"
+		},
+		"statementsep": {
+   			"match": ";",
+	    	"name": "punctuation.separator.delimiter.nutmeg"
 		}
-	},
-	"scopeName": "source.nutmeg"
+	}
 }
