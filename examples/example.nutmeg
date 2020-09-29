@@ -3,7 +3,8 @@ def hello():
 end
 
 def hello():
-    let i = 1
+    let i = [1];
     let s = "asdfas\n"
-    print s + i
+    print s + i;
+    if then else endif
 end
