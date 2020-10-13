@@ -27,7 +27,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nutmeg",
-				"match": "\\b(def|enddef|if|then|else|endif|while|for|do|endfor|return|begin|end|let|in|var)\\b"
+				"match": "\\b(def|enddef|if|then|else|elseif|endif|while|for|do|endfor|return|begin|end|let|in|var)\\b"
 			}]
 		},
 		"dqstring": {
