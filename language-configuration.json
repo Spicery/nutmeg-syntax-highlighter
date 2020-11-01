@@ -17,8 +17,7 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-        ["'", "'"],
-        ["if", "endif"]
+        ["'", "'"]
     ],
     // symbols that that can be used to surround a selection
     "surroundingPairs": [
@@ -26,8 +25,7 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-        ["'", "'"],
-        ["begin", "end"]
+        ["'", "'"]
     ],
     // folding
     "folding": {

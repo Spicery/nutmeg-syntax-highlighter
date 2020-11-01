@@ -7,28 +7,25 @@
 	"foldingStopMarker": "end",
 
 	"patterns": [
-		{ "include": "#statements" },
+		{ "include": "#dqstring" },
+		{ "include": "#sqstring" },
+		{ "include": "#dqstring" },
+		{ "include": "#sqstring" },
+		{ "include": "#number" },
 		{ "include": "#eolcomment" },
-		{ "include": "#keywords" }
+		{ "include": "#outfix" },
+		{ "include": "#prefix" },
+		{ "include": "#statementsep" },
+		{ "include": "#annotation" }
 	],
 	"repository": {
-		"statements": {
-			"patterns": [
-				{ "include": "#dqstring" },
-				{ "include": "#sqstring" },
-				{ "include": "#generic-tag" },
-				{ "include": "#array" },
-				{ "include": "#dqstring" },
-				{ "include": "#sqstring" },
-				{ "include": "#number" },
-				{ "include": "#eolcomment" }
-			]
+		"outfix": {
+			"name": "keyword.control.nutmeg",
+			"match": "\\b(def|enddef|if|then|else|elseif|endif|while|for|do|endfor|return|begin|end|let|in|var)\\b"
 		},
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.nutmeg",
-				"match": "\\b(def|enddef|if|then|else|elseif|endif|while|for|do|endfor|return|begin|end|let|in|var)\\b"
-			}]
+		"prefix": {
+			"name": "keyword.control.other.nutmeg",
+			"match": "\\b(assert)\\b"
 		},
 		"dqstring": {
 			"name": "string.quoted.double.nutmeg",
@@ -58,6 +55,15 @@
 		"eolcomment": {
 			"name": "comment.line.triplehash.nutmeg",
 			"match": "###.*$"
+		},
+		"annotation": {
+			"name": "entity.name.function.decorator.nutmeg",
+			"match": "@[a-zA-Z][a-zA-Z0-9_]+"
+		},
+		"number": {
+			"name": "constant.numeric.nutmeg",
+			"match": "[0-9]+",
+			"patterns": []
 		},
 		"statementsep": {
    			"match": ";",

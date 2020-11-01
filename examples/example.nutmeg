@@ -1,10 +1,19 @@
+@unittest
 def hello():
     "hello, world"
 end
+9999
 
+    ###   178   
+
+@command
 def hello():
-    let i = [1];
+    let i = [1]; ### huh
     let s = "asdfas\n"
-    print s + i;
-    if then else endif
+    println( s + i );
+    if then 
+        19878
+    else 
+        assert true
+    endif
 end
