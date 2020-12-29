@@ -21,7 +21,7 @@
 	"repository": {
 		"outfix": {
 			"name": "keyword.control.nutmeg",
-			"match": "\\b(def|enddef|if|then|else|elseif|endif|while|for|do|endfor|return|begin|end|let|in|var)\\b"
+			"match": "\\b(def|enddef|ifnot|if|then|else|elseifnot|elseif|endifnot|endif|while|for|do|endfor|return|begin|end|let|in|var)\\b"
 		},
 		"prefix": {
 			"name": "keyword.control.other.nutmeg",
