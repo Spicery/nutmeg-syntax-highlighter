@@ -62,7 +62,7 @@
 		},
 		"number": {
 			"name": "constant.numeric.nutmeg",
-			"match": "[0-9]+",
+			"match": "\\b[0-9]+\\b",
 			"patterns": []
 		},
 		"statementsep": {
