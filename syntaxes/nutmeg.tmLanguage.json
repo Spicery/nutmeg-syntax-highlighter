@@ -9,8 +9,7 @@
 	"patterns": [
 		{ "include": "#dqstring" },
 		{ "include": "#sqstring" },
-		{ "include": "#dqstring" },
-		{ "include": "#sqstring" },
+		{ "include": "#character" },
 		{ "include": "#number" },
 		{ "include": "#eolcomment" },
 		{ "include": "#outfix" },
@@ -26,6 +25,10 @@
 		"prefix": {
 			"name": "keyword.control.other.nutmeg",
 			"match": "\\b(assert)\\b"
+		},
+		"character": {
+			"name": "constant.character",
+			"match": "`[^`\n]`"
 		},
 		"dqstring": {
 			"name": "string.quoted.double.nutmeg",

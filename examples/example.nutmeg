@@ -10,6 +10,7 @@ end
 def hello():
     let i = [1]; ### huh
     let s = "asdfas\n"
+    let p = `f`
     println( s + i );
     if then 
         19878
